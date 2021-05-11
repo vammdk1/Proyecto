@@ -3,7 +3,7 @@ package datos;
 import java.time.LocalDate;
 
 //clase hija usada para las operaciones periódicas 
-public class Tperiodicas extends Operaciones{//
+public class Tperiodica extends Operacione{//
 	private int dia ; // día de la fecha final
 	private int mes ; // mes de la fecha final ,¿ usar un map para conectar las cosas ?
 	private int anno;
@@ -22,7 +22,7 @@ public class Tperiodicas extends Operaciones{//
 	 * @param mfinal ultimo mes de la transferencia
 	 * @param afinal ultimo año de la transferencia
 	 */
-	public Tperiodicas(Cuenta usuario,Cuenta contacto, double monto, String descripcion, boolean ingreso,int dfinal,int mfinal, int afinal) {
+	public Tperiodica(Cuenta usuario,Cuenta contacto, double monto, String descripcion, boolean ingreso,int dfinal,int mfinal, int afinal) {
 		super(usuario,contacto,monto,descripcion);
 		this.finicial=LocalDate.now();
 		this.dia=dfinal;

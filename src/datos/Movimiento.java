@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Movimiento extends Operaciones {
+public class Movimiento extends Operacione {
 	
 	private LocalDate fecha;
 	public boolean Ingreso;

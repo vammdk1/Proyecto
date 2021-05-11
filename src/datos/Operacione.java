@@ -7,14 +7,14 @@ import java.util.ArrayList;
 // esta clase se va a encargar de procesar las operaciones 
 // atomizar los movimientos
 
-public abstract class Operaciones implements Serializable{
+public abstract class Operacione implements Serializable{
 	
 	private Cuenta cuenta1;
 	private Cuenta cuenta2;
 	private double monto;
 	private String descripcion;
 		
-	public Operaciones(Cuenta usuario ,Cuenta contacto, double monto, String descripcion) {
+	public Operacione(Cuenta usuario ,Cuenta contacto, double monto, String descripcion) {
 		this.cuenta1= usuario;
 		this.cuenta2 = contacto;
 		this.monto = monto;

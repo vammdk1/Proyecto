@@ -61,7 +61,7 @@ public class BaseDatos implements Serializable {
 	public ArrayList<Movimiento> getCuentaMovimientos() {
 		return cMov.get(this.cuenta.getNcuenta());
 	}
-	public static void guardado () {
+	public void guardado () {
 		try {
 			ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream("cUsuarios.users"));
 			salida.writeObject(cUsuarios);
@@ -77,7 +77,7 @@ public class BaseDatos implements Serializable {
 			System.out.println("Error guardando las cuentas");
 		}
 	}
-	public static void cargadoDatos() {
+	public void cargadoDatos() {
 		try {
 			ObjectInputStream entrada = new ObjectInputStream(new FileInputStream("cUsuarios.users"));
 			cUsuarios=(TreeMap<String, Usuario>) entrada.readObject();	

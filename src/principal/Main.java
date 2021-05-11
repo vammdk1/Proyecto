@@ -9,8 +9,8 @@ import javax.swing.JFrame;
 import datos.BaseDatos;
 import datos.Cuenta;
 import datos.Movimiento;
-import datos.Operaciones;
-import datos.Tperiodicas;
+import datos.Operacione;
+import datos.Tperiodica;
 import datos.Usuario;
 import visual.EntornoG;
 
@@ -68,7 +68,7 @@ public class Main {
 		m.setOperacion();
 	}
 	//proceso para movimientos periodicos
-	public static void PasosTPerioducas(Tperiodicas m) {
+	public static void PasosTPerioducas(Tperiodica m) {
 		m.setOperacion();
 	}
 	

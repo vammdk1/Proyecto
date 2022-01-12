@@ -5,10 +5,10 @@ import java.io.Serializable;
 public class Usuario implements Serializable{
 	private String nombre;
 	private String apellido;
-	private int pin;
+	private String pin;
 	private Cuenta cuentaU;
 	
-	public Usuario (String nombre, String apellido,int pin,Cuenta cuenta) {
+	public Usuario (String nombre, String apellido,String pin,Cuenta cuenta) {
 		this.nombre=nombre;//convertir el nombre y apellido en un solo campo ?
 		this.apellido=apellido;
 		this.pin=pin;
@@ -29,7 +29,7 @@ public class Usuario implements Serializable{
 	public void setPin() {
 		this.pin=pin;
 	}
-	public int getPin() {
+	public String getPin() {
 		return pin;
 	}
 	public void setCuentau(Cuenta c) {
@@ -39,12 +39,12 @@ public class Usuario implements Serializable{
 			this.cuentaU=cuentaU;
 		}
 	}
-	public Cuenta getCuetnau() {
+	public Cuenta getCuentaUsuario() {
 		return cuentaU;
 	}
 	
 	public String toString() {
-		return "Usuario: "+this.nombre+" "+ this.apellido+" |Pin: "+this.pin;
+		return "Usuario: "+this.nombre+" "+ this.apellido+" |Pin: "+this.pin +" |Nº de cuenta :"+this.getCuentaUsuario().getNcuenta();
 	}
 	
 

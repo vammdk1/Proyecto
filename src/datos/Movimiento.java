@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Movimiento extends Operacione {
+public class Movimiento extends Operaciones {
 	
 	private LocalDate fecha;
 	public boolean Ingreso;
@@ -20,20 +20,20 @@ public class Movimiento extends Operacione {
 		super(usuario,contacto,monto,descripcion);
 		this.Ingreso=ingreso;
 	}
-		
+			
 	public void setOperacion() {
 		if (this.Ingreso==true) {
-			this.Ingreso();
+			Ingreso(this);
 		}else {
-			Egreso();
+			Egreso(this);
 		}
 	}
 	
 	public String toString() { // regresa el string de la operación
 		if (this.Ingreso==true) {
-			return "Ingreso: "+this.getDescripcion()+"==>|Contacto: "+this.getCuenta2().getUsuario().getNom()+" "+this.getCuenta2().getUsuario().getApell()+" |Monto: +"+this.getMonto()+" |Fecha: "+LocalDate.now();
+			return this.getDescripcion()+"==>|Emisor: "+this.getCuenta2().getUsuario().getNom()+" "+this.getCuenta2().getUsuario().getApell()+" |Monto: +"+this.getMonto()+" |Fecha: "+LocalDate.now();
 		}else {
-			return "Egreso: "+this.getDescripcion()+"==>|Receptor: "+this.getCuenta2().getUsuario().getNom()+" "+this.getCuenta2().getUsuario().getApell()+" |Monto: -"+this.getMonto()+" |Fecha: "+LocalDate.now();
+			return this.getDescripcion()+"==>|Receptor: "+this.getCuenta2().getUsuario().getNom()+" "+this.getCuenta2().getUsuario().getApell()+" |Monto: -"+this.getMonto()+" |Fecha: "+LocalDate.now();
 		}
 	}
 	

@@ -7,14 +7,15 @@ import java.util.ArrayList;
 // esta clase se va a encargar de procesar las operaciones 
 // atomizar los movimientos
 
-public abstract class Operacione implements Serializable{
+public abstract class Operaciones implements Serializable{
+	
 	
 	private Cuenta cuenta1;
 	private Cuenta cuenta2;
 	private double monto;
 	private String descripcion;
 		
-	public Operacione(Cuenta usuario ,Cuenta contacto, double monto, String descripcion) {
+	public Operaciones(Cuenta usuario ,Cuenta contacto, double monto, String descripcion) {
 		this.cuenta1= usuario;
 		this.cuenta2 = contacto;
 		this.monto = monto;
@@ -49,14 +50,15 @@ public abstract class Operacione implements Serializable{
 	public void setMontos(double fondos) {
 		this.monto = monto;
 	}
-
-	public void Ingreso() {// ingresos a la cuenta, creo que esta sobra
+	
+	public void Ingreso(Operaciones m) {// ingresos a la cuenta
 		cuenta1.setSaldo(this.cuenta1.getSaldo()+this.monto);
 		cuenta2.setSaldo(this.cuenta2.getSaldo()-this.monto);	
+
 	}
-	public void Egreso() {// cobros a la cuenta	
-		cuenta2.setSaldo(this.cuenta2.getSaldo()+this.monto);
+	public void Egreso(Operaciones m) {// cobros a la cuenta	
 		cuenta1.setSaldo(this.cuenta1.getSaldo()-this.monto);
+		cuenta2.setSaldo(this.cuenta2.getSaldo()+this.monto);
 	}
 	
 
